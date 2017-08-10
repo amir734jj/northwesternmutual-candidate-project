@@ -1,0 +1,38 @@
+<div ng-controller="weatherCtrl">
+  <div class="form-group">
+    <label for="username">Search by city:</label>
+    <input type="text" class="form-control" ng-model="city" ng-change="searchCity()">
+  </div>
+  <hr>
+  <div ng-show="cities">
+    <h3>Select the city:</h3>
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th class="hidden-xs">Coordinates</th>
+          <th>Get weather</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="city in cities">
+          <td>{{city.title}}</td>
+          <td>{{city.location_type}}</td>
+          <td class="hidden-xs">{{city.latt_long}}</td>
+          <td><button class="btn btn-primary" ng-click="searchWeather(city)">Details</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <div ng-show="weather">
+    <h3>Weather for the next few days:</h3>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="weatherOfDay in weather.consolidated_weather">
+        {{weatherOfDay.weather_state_name}} on {{formatDate(weatherOfDay.applicable_date)}} and temperature between
+        {{formatTemperature(weatherOfDay.min_temp)}} ~ {{formatTemperature(weatherOfDay.max_temp)}} °F
+      </li>
+    </div>
+  </div>
+</div>
