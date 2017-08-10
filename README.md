@@ -1,11 +1,11 @@
-<<<<<<< HEAD
-# sinatra-simple-app
-Simple Sinatra app login and logout practice
+#H2 Candidate project for software engineering position at Northwestern Mutual
 
-This is a practice app to play around with login, register and logout in Sinatra
+Backend is done using Ruby programming language and Sinatra web framework
+The frontend is done using: Angular 1.x and Bootstrap
 
-Make sure to have installed `Sinatra` or `sudo bundle install` to install all dependencies. Finally, run `sudo ruby server.rb`
-=======
-# northwesternmutual-candidate-project
-Candidate project for Northwestern mutual
->>>>>>> 76dc609e99501b76367912a3687d7e1deb375f4b
+The backend will relay the weather request to destination so the front-end would not deal with CORS
+The weather service is: [metaweather](https://www.metaweather.com/)
+
+To run the application make sure to have ruby installed. Then run in the command line:
+    `sudo bundle install`
+    `ruby ruby index.rb`
