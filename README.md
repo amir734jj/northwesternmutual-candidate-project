@@ -1,4 +1,4 @@
-# H3 Candidate project for software engineering position at Northwestern Mutual
+# Candidate project for software engineering position at Northwestern Mutual
 
 Backend is done using Ruby programming language and Sinatra web framework
 The frontend is done using: Angular 1.x and Bootstrap
