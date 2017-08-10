@@ -1,10 +1,12 @@
 <div ng-controller="weatherCtrl">
+  <h2>Get weather information <small>(powered by <a href="https://metaweather.com">metaweather</a> API)</small></h2>
+  <hr>
   <div class="form-group">
-    <label for="username">Search by city:</label>
+    <label for="username">Enter name of a city: <small>(e.g. Milwaukee)</small></label>
     <input type="text" class="form-control" ng-model="city" ng-change="searchCity()">
   </div>
-  <hr>
-  <div ng-show="cities">
+  
+  <div ng-show="cities.length" ng-cloak>
     <h3>Select the city:</h3>
     <table class="table table-hover table-bordered">
       <thead>
@@ -25,13 +27,14 @@
       </tbody>
     </table>
   </div>
-  <hr>
-  <div ng-show="weather">
+  
+  <div ng-show="weather.consolidated_weather.length" ng-cloak>
+    <hr>
     <h3>Weather for the next few days:</h3>
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="weatherOfDay in weather.consolidated_weather">
-        {{weatherOfDay.weather_state_name}} on {{formatDate(weatherOfDay.applicable_date)}} and temperature between
-        {{formatTemperature(weatherOfDay.min_temp)}} ~ {{formatTemperature(weatherOfDay.max_temp)}} °F
+        <span class="note">{{weatherOfDay.weather_state_name}}</span> on <span class="note">{{formatDate(weatherOfDay.applicable_date)}}</span> and temperatures between
+        <span class="note">{{formatTemperature(weatherOfDay.min_temp)}}</span> ~ <span class="note">{{formatTemperature(weatherOfDay.max_temp)}}</span> °F
       </li>
     </div>
   </div>
