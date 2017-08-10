@@ -8,6 +8,5 @@ The weather service is: [metaweather](https://www.metaweather.com/)
 
 To run the application make sure to have ruby installed. Then run in the command line:
 
-    `sudo bundle install`
-
-    `ruby ruby index.rb`
+    sudo bundle install
+    ruby ruby index.rb
