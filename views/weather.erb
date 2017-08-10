@@ -5,7 +5,7 @@
     <label for="username">Enter name of a city: <small>(e.g. Milwaukee)</small></label>
     <input type="text" class="form-control" ng-model="city" ng-change="searchCity()">
   </div>
-  
+
   <div ng-show="cities.length" ng-cloak>
     <h3>Select the city:</h3>
     <table class="table table-hover table-bordered">
@@ -27,10 +27,10 @@
       </tbody>
     </table>
   </div>
-  
+
   <div ng-show="weather.consolidated_weather.length" ng-cloak>
     <hr>
-    <h3>Weather for the next few days:</h3>
+    <h3>Weather for the next few days of {{weather.title}}:</h3>
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="weatherOfDay in weather.consolidated_weather">
         <span class="note">{{weatherOfDay.weather_state_name}}</span> on <span class="note">{{formatDate(weatherOfDay.applicable_date)}}</span> and temperatures between
